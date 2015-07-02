@@ -1,10 +1,24 @@
 {
-  "apikey" : "<your-key>"
-  "token" : "<your-token"
+  "apikey" : "<your-key>",
+  "token" : "<your-token",
   "lists" : [
-    "55905c3ada8378ffe5892c64",
-    "559058ccca97b695e5f14e87",
-    "559058cefe021e017b19d994"
+    {
+      "id" : "55905c3ada8378ffe5892c64",
+      "cardFields" : [
+        "name",
+        "dateLastActivity"
+      ]
+    },
+    {
+      "id" : "55905c3ada8378ffe5892c64"
+    },
+    {
+      "id" : "559058ccca97b695e5f14e87"
+    },
+    {
+      "id" :  "559058cefe021e017b19d994"
+
+    }
   ],
   "fields" : [
     "name",

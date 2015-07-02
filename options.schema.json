@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "/",
+  "type": "object",
+  "properties": {
+    "apikey": {
+      "id": "apikey",
+      "type": "string"
+    },
+    "token": {
+      "id": "token",
+      "type": "string"
+    },
+    "lists": {
+      "id": "lists",
+      "type": "array",
+      "items": {
+        "id": "0",
+        "type": "object",
+        "properties": {
+          "id": {
+            "id": "id",
+            "type": "string"
+          },
+          "cardFields": {
+            "id": "cardFields",
+            "type": "array",
+            "items": {
+              "id": "1",
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "fields": {
+      "id": "fields",
+      "type": "array",
+      "items": {
+        "id": "5",
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "apikey",
+    "token",
+    "lists",
+    "fields"
+  ]
+}
