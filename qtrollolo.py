@@ -3,6 +3,8 @@
 import json
 import jsonschema
 import trolly
+from trolly.member import Member
+from trolly.client import Client
 import os.path
 import urllib
 from optparse import OptionParser
@@ -68,3 +70,17 @@ except IOError as e:
 if not configstatus['status'] == "valid":
     log(0, "error, config not valid: " + str(configstatus))
 
+defaultCardFields = config['fields']
+lists = config['lists']
+
+client1 = Client(config['apikey'], config['token'])
+
+print('Member: %s' % client1.fetch_json)
+
+for list in lists:
+    if 'cardFields' in list:
+        cardFields = list['cardFields']
+    else:
+        cardFields = defaultCardFields
+
+    print(list)
