@@ -1,9 +1,16 @@
 {
   "apikey" : "<your-key>",
-  "token" : "<your-token",
+  "token" : "<your-token>",
   "lists" : [
     {
-      "id" : "55905c3ada8378ffe5892c64",
+      "id" : "559058b3a9f8bcac4351cdb6",
+      "cardFields" : [
+        "name",
+        "dateLastActivity"
+      ]
+    },
+    {
+      "id" : "559058c3f5cbc7192c9fbd5a",
       "cardFields" : [
         "name",
         "dateLastActivity"
