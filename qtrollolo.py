@@ -2,9 +2,14 @@
 
 import json
 import jsonschema
-import trolly
-from trolly.member import Member
 from trolly.client import Client
+from trolly.organisation import Organisation
+from trolly.board import Board
+from trolly.list import List
+from trolly.card import Card
+from trolly.checklist import Checklist
+from trolly.member import Member
+from trolly import ResourceUnavailable
 import os.path
 import urllib
 from optparse import OptionParser
@@ -73,9 +78,9 @@ if not configstatus['status'] == "valid":
 defaultCardFields = config['fields']
 lists = config['lists']
 
-client1 = Client(config['apikey'], config['token'])
+trello = Client(config['apikey'], config['token'])
 
-print('Member: %s' % client1.fetch_json)
+result = {}
 
 for list in lists:
     if 'cardFields' in list:
@@ -83,4 +88,7 @@ for list in lists:
     else:
         cardFields = defaultCardFields
 
-    print(list)
+    myList = trello.get_list(list['id'])
+    cards = myList.get_cards()
+    myListInfo = myList.get_cards()
+    print(myListInfo)
