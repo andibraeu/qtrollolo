@@ -16,7 +16,7 @@ from optparse import OptionParser
 
 #log helper function
 def log(logLevel, message):
-    if logLevel <= 3:
+    if logLevel <= options.logLevel:
         print("Message from engine room (level " + str(logLevel) + "): " + message)
 
 def validate_options(specs, instance):
@@ -88,7 +88,26 @@ for list in lists:
     else:
         cardFields = defaultCardFields
 
+    cardParams = {}
+    listResult = {}
     myList = trello.get_list(list['id'])
+    myListInfo = myList.get_list_information()
+    listResult['id'] = list['id']
+    listResult['cards'] = []
+    cardParams['fields'] = ",".join(cardFields)
     cards = myList.get_cards()
-    myListInfo = myList.get_cards()
-    print(myListInfo)
+    for card in cards:
+        cardInfo = card.get_card_information(cardParams)
+        listResult['cards'].append(cardInfo)
+    result[myListInfo['name']] = listResult
+
+log(3, "our result: " + json.dumps(result,indent=4,ensure_ascii=False))
+#write summary to bin directory
+try:
+    f = open(options.output, "w")
+    try:
+        f.write(str(json.dumps(result, indent=4, ensure_ascii=False)))
+    finally:
+        f.close()
+except IOError:
+    pass

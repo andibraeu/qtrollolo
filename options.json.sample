@@ -6,6 +6,7 @@
       "id" : "559058b3a9f8bcac4351cdb6",
       "cardFields" : [
         "name",
+        "labels",
         "dateLastActivity"
       ]
     },
@@ -13,6 +14,7 @@
       "id" : "559058c3f5cbc7192c9fbd5a",
       "cardFields" : [
         "name",
+        "labels",
         "dateLastActivity"
       ]
     },
@@ -30,6 +32,8 @@
   "fields" : [
     "name",
     "desc",
+    "descData",
+    "labels",
     "closed",
     "dateLastActivity",
     "shortUrl",
