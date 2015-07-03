@@ -1,2 +1,2 @@
-Trolly
+-e git+https://github.com/plish/Trolly#egg=Trolly
 jsonschema
